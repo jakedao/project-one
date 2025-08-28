@@ -16,4 +16,9 @@ export default defineConfig({
       "@": "/src",
     },
   },
+  build: {
+    rollupOptions: {
+      external: ["@hookform/resolvers/yup"],
+    },
+  },
 });
