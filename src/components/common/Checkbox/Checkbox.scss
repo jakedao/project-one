@@ -1,0 +1,30 @@
+.checkbox-wrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  input[type="checkbox"] {
+    margin-right: 8px;
+    cursor: pointer;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  svg {
+    stroke: $raisin-black;
+    fill: $raisin-black;
+  }
+
+  &:hover,
+  &.checked {
+    color: $garnet;
+
+    svg {
+      stroke: $garnet;
+      fill: $garnet;
+    }
+  }
+}

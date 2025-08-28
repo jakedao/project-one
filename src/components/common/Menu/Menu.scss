@@ -1,0 +1,11 @@
+.menu {
+  position: absolute;
+  z-index: 5;
+  background-color: $timber-wolf;
+  border-radius: $border-radius;
+  min-width: 180px;
+  max-width: $menu-width;
+  padding: $padding-base * 2 0;
+
+  box-shadow: 0px 5px 5px 2px rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,85 @@
+@use "./styles/global.scss";
+
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+#root {
+  max-width: $desktop;
+  color: $raisin-black;
+  background-color: $timber-wolf;
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.main__body {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: $padding-base * 6;
+  height: calc(100vh - $header-height);
+
+  &--drawer-opened {
+    filter: blur(1px);
+    pointer-events: none;
+  }
+
+  @include responsive("desktop") {
+    padding: $padding-base * 10;
+    filter: none;
+  }
+}
+
+svg {
+  stroke: $garnet;
+}
+
+.disabled {
+  color: $grullo !important;
+  stroke: $grullo !important;
+  pointer-events: none !important;
+
+  svg {
+    stroke: $grullo !important;
+    fill: $grullo !important;
+  }
+}
+
+.transition {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  z-index: 2;
+  position: relative;
+  box-shadow: none;
+  border: none;
+  height: 20px;
+  width: 20px;
+  background: url("/images/slider-thumb.png");
+  background-size: contain;
+  border-radius: 16px;
+
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}

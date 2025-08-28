@@ -1,0 +1,54 @@
+.cart-item-wrapper {
+  display: flex;
+  align-items: center;
+  width: 330px;
+  height: 120px;
+  background-color: $cold-ash;
+  border-radius: 8px;
+  padding: 12px 16px;
+  column-gap: 16px;
+
+  @include castShadow();
+}
+
+.cart-item {
+  &__image {
+    flex-basis: 40%;
+    width: 90px;
+    height: 90px;
+    background-color: white;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__desc {
+    display: flex;
+    width: 100%;
+    row-gap: 16px;
+    flex-flow: column nowrap;
+    align-items: start;
+    justify-content: space-between;
+
+    &__main {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      row-gap: 8px;
+    }
+
+    &__pricing {
+      color: $garnet;
+    }
+  }
+
+  &__controller {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

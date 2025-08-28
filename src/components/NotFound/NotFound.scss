@@ -1,0 +1,10 @@
+.error-component__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $garnet;
+
+  & svg {
+    margin-right: 10px;
+  }
+}

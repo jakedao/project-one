@@ -1,0 +1,18 @@
+.navigation {
+  display: none;
+
+  display: flex;
+  align-items: center;
+  column-gap: $padding-base * 4;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    column-gap: $padding-base * 4;
+
+    .separator {
+      color: $garnet;
+      font-size: $text-title;
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.demo__page {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  column-gap: 16px;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 50%;
+
+    &__item {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      row-gap: 16px;
+    }
+  }
+
+  &__3d {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 760px;
+
+    &__toolbar {
+      display: flex;
+      column-gap: 16px;
+      margin-top: 16px;
+    }
+  }
+
+  & .button {
+    margin-top: 16px;
+    align-self: center;
+  }
+}

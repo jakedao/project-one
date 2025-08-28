@@ -1,0 +1,54 @@
+.button {
+  display: flex;
+  cursor: pointer;
+  border-radius: 50px;
+  max-width: 400px;
+  font-size: $text-title;
+  align-items: center;
+  justify-content: center;
+  padding: $padding-base $padding-base * 4;
+  user-select: none;
+}
+
+.button--primary {
+  background-color: $garnet;
+  color: $timber-wolf;
+  &:hover {
+    background-color: $light-garnet;
+  }
+
+  &--disabled {
+    background-color: transparent;
+    color: $grullo;
+    font-style: italic;
+    border: 1px solid $grullo;
+
+    &:hover {
+      font-weight: bold;
+      background-color: transparent;
+      border: 2px solid $grullo;
+    }
+  }
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: $garnet;
+  border: 1px solid $garnet;
+
+  &:hover {
+    color: $light-garnet;
+    border: 1px solid $light-garnet;
+  }
+
+  &--disabled {
+    color: $grullo;
+    font-style: italic;
+    border: 1px solid $grullo;
+
+    &:hover {
+      font-weight: bold;
+      border: 2px solid $grullo;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: 5px;
+}
+
+.text-field__wrapper {
+  display: flex;
+  align-items: center;
+  height: $text-field-height;
+  background-color: $cold-ash;
+  border-radius: 8px;
+
+  svg {
+    stroke: $garnet;
+    position: absolute;
+    margin-left: 5px;
+  }
+
+  &--disabled {
+    svg {
+      stroke: $grullo;
+    }
+  }
+
+  &--error {
+    background-color: $error;
+  }
+}
+
+.text-field {
+  width: 100%;
+  height: $text-field-height;
+  font-size: $text-base;
+  color: $garnet;
+  border: none;
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 0rem;
+  padding-left: 10px;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $garnet;
+  }
+
+  &::placeholder {
+    color: $charcoal;
+  }
+
+  &--with-icon {
+    padding-left: 30px;
+  }
+
+  &--disabled {
+    &::placeholder {
+      color: $grullo;
+    }
+  }
+
+  &--error {
+    &::placeholder {
+      color: $garnet;
+    }
+  }
+}
+
+.error-message {
+  color: $garnet;
+  font-style: italic;
+}

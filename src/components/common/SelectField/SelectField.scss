@@ -1,0 +1,23 @@
+.select-field__wrapper {
+  height: 50px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $padding-base * 2;
+  background-color: $cold-ash;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    border: 1px solid $garnet;
+  }
+
+  &--expanded {
+    background-color: $dark-cold-ash;
+  }
+}
+
+.select-field {
+  color: $garnet;
+}

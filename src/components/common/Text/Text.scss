@@ -1,0 +1,83 @@
+h1 {
+  font-size: 60px;
+  line-height: 60px;
+  margin: 0;
+}
+
+h2 {
+  font-size: 55px;
+  line-height: 55px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 50px;
+  line-height: 50px;
+  margin: 0;
+}
+
+h4 {
+  font-size: 35px;
+  line-height: 35px;
+  margin: 0;
+
+  @include responsive("desktop") {
+    font-size: 45px;
+    line-height: 45px;
+  }
+}
+
+h5 {
+  font-size: 30px;
+  line-height: 30px;
+  margin: 0;
+
+  @include responsive("desktop") {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+.text {
+  width: inherit;
+  display: inline-block;
+
+  &.truncated {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &--title {
+    font-size: $text-base + $text-modifier;
+    font-weight: 600;
+
+    @include responsive("desktop") {
+      font-size: $text-base + ($text-modifier * 3);
+    }
+  }
+
+  &--lg {
+    font-size: $text-base;
+
+    @include responsive("desktop") {
+      font-size: $text-base + $text-modifier;
+    }
+  }
+
+  &--md {
+    font-size: $text-base - $text-modifier;
+
+    @include responsive("desktop") {
+      font-size: $text-base;
+    }
+  }
+
+  &--sm {
+    font-size: $text-base - ($text-modifier * 2);
+
+    @include responsive("desktop") {
+      font-size: $text-base - $text-modifier;
+    }
+  }
+}

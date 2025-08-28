@@ -1,0 +1,39 @@
+.menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $garnet;
+  max-width: $menu-text-width;
+  cursor: pointer;
+
+  padding: $padding-base * 2;
+  font-size: $text-title;
+
+  &--selected {
+    color: $timber-wolf;
+    background-color: $garnet;
+
+    svg {
+      stroke: $timber-wolf;
+      fill: $timber-wolf;
+    }
+  }
+
+  &--disabled {
+    font-style: italic;
+    color: $grullo;
+    font-weight: bold;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &:hover {
+    color: $timber-wolf;
+    background-color: $garnet;
+
+    svg {
+      stroke: $timber-wolf;
+      fill: $timber-wolf;
+    }
+  }
+}

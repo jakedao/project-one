@@ -1,0 +1,15 @@
+.controller {
+  &__first {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__second {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    position: absolute;
+    margin-left: 12px;
+    margin-top: -40px;
+  }
+}

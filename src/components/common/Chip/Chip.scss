@@ -1,0 +1,15 @@
+.chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  padding: 4px 12px;
+  border: 1px solid $garnet;
+  color: $garnet;
+  border-radius: 16px;
+  user-select: none;
+
+  & .icon-button {
+    margin-left: 8px;
+  }
+}

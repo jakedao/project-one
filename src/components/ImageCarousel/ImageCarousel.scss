@@ -1,0 +1,100 @@
+.carousel-wrapper {
+  display: flex;
+  width: 380px;
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  user-select: none;
+
+  @include responsive("desktop") {
+    width: 750px;
+    height: 550px;
+    column-gap: 48px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.carousel-image {
+  width: 380px;
+  height: 310px;
+  background-color: $cold-ash;
+
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @include responsive("desktop") {
+    width: 500px;
+    height: 550px;
+  }
+}
+
+.image-swiper {
+  height: 100px;
+  width: 380px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+  row-gap: 16px;
+
+  & svg {
+    cursor: pointer;
+    transform: rotate(270deg);
+
+    @include responsive("desktop") {
+      transform: none;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 330px;
+    column-gap: 8px;
+    overflow-x: auto;
+
+    @include responsive("desktop") {
+      width: 100px;
+      flex-flow: column;
+      overflow-y: auto;
+      align-items: center;
+      justify-content: start;
+      row-gap: 16px;
+    }
+  }
+
+  &__image-wrapper {
+    flex-shrink: 0;
+    flex-basis: 30%;
+    height: 80px;
+    cursor: pointer;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    &--selected {
+      border: 2px solid $garnet;
+    }
+  }
+
+  @include responsive("desktop") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100px;
+    height: 400px;
+    overflow-y: auto;
+    flex-wrap: nowrap;
+    margin-top: 0px;
+  }
+}

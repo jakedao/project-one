@@ -1,0 +1,17 @@
+.link {
+  cursor: pointer;
+  color: $garnet;
+  font-size: $text-title;
+
+  &__item {
+    &:hover {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  &__item-selected {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}

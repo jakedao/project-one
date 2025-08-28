@@ -1,0 +1,31 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+
+  input[type="range"] {
+    background-color: $error;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 16px;
+
+    border: none;
+    outline: none; /* Remove outline */
+    box-shadow: none;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    // background-color: $garnet;
+    border-radius: none;
+    box-shadow: none;
+    border-radius: 16px;
+  }
+
+  & .chip {
+    margin-top: 6px;
+  }
+}

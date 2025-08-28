@@ -1,0 +1,46 @@
+.toast {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  top: 20px;
+  right: 20px;
+  padding: 16px 8px;
+  border-radius: 4px;
+  transition: opacity 0.5s linear;
+  @include castShadow();
+
+  &--show {
+    opacity: 1;
+    transition: opacity 0.5s linear;
+  }
+
+  & svg {
+    margin-right: 12px;
+  }
+
+  &--info {
+    background-color: $timber-wolf;
+    color: $olive;
+
+    & svg {
+      stroke: $olive;
+      fill: $olive;
+    }
+  }
+
+  &--error {
+    background-color: $error;
+    color: $garnet;
+  }
+
+  &--success {
+    background-color: $success;
+    color: $olive;
+
+    & svg {
+      stroke: $olive;
+      fill: $olive;
+    }
+  }
+}

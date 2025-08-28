@@ -1,0 +1,35 @@
+.pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: $garnet;
+  font-weight: bold;
+  column-gap: $padding-base;
+
+  &__paging {
+    display: flex;
+    column-gap: $padding-base;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  &__page {
+    display: flex;
+    height: 25px;
+    width: 25px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+
+    cursor: pointer;
+
+    &--selected {
+      text-decoration: underline;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
