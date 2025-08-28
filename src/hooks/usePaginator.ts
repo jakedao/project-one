@@ -1,5 +1,4 @@
 import { NULLISH_PAGE } from "@/constants";
-import { PRODUCTS } from "@/constants/data";
 import type { CustomSearchParams } from "@/types/listing";
 import { useSearchParams } from "react-router";
 
@@ -15,7 +14,7 @@ const usePaginator = () => {
   const flavor = parsedSearchParms.flavor;
   const min = Number(parsedSearchParms.min) || 0;
   const max = Number(parsedSearchParms.max) || 100;
-  const total = Number(parsedSearchParms.total) || PRODUCTS.length;
+  const total = Number(parsedSearchParms.total) || 0;
   const maxPage = Math.ceil(total / limit);
   const keyword = parsedSearchParms.keyword || "";
 
