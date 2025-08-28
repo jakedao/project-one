@@ -18,7 +18,12 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ["@hookform/resolvers/yup", "zustand", "@babylonjs/core"],
+      external: [
+        "@hookform/resolvers/yup",
+        "zustand",
+        "@babylonjs/core",
+        "earcut",
+      ],
     },
   },
 });
