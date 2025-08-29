@@ -3,6 +3,7 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: process.env.VITE_BASE_PATH || "/project-one",
   plugins: [react()],
   css: {
     preprocessorOptions: {
@@ -17,6 +18,7 @@ export default defineConfig({
     },
   },
   build: {
+    outDir: "dist",
     rollupOptions: {
       external: [
         "@hookform/resolvers/yup",
