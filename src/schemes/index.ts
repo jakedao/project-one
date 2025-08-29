@@ -1,8 +1,15 @@
 import type { DemoForm } from "@/types/demo";
-import { ObjectSchema, number, object, string } from "yup";
+import * as yup from "yup";
 
-export const schema: ObjectSchema<DemoForm> = object().shape({
-  name: string().required("Please input your name"),
-  shape: string().oneOf(["box", "sphere"]).required(),
-  size: number().default(0).required(),
+yup.addMethod(yup.string, "containBox", function (errorMsg?: string) {
+  return this.test("isBox", errorMsg || "It does not contain box", (value) => {
+    if (!value) return true;
+    return value.includes("box");
+  });
+});
+
+export const schema: yup.ObjectSchema<DemoForm> = yup.object().shape({
+  name: yup.string().containBox().required("Please input your name"),
+  shape: yup.string().oneOf(["box", "sphere"]).required(),
+  size: yup.number().default(0).required(),
 });

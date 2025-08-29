@@ -9,8 +9,9 @@ const filterData = (params: CustomSearchParams) => {
     const hasFlavorFilter = Boolean(flavors.filter(Boolean).length);
 
     // IF having no Flavor filter will ignored result of Product Flavors
-    const flavorCondition =
-      (hasFlavorFilter && flavors.includes(product.flavor!)) || true;
+    const flavorCondition = hasFlavorFilter
+      ? flavors.includes(product.flavor!)
+      : true;
 
     const pricingCondition = product.price >= min && product.price <= max;
     const keywordCondition =

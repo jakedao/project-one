@@ -19,10 +19,11 @@ const LoginPage = () => {
 
   const handleLogin = () => {
     const id = idRef.current?.value;
+    const MUST_INCLUDED = "simpson";
     const password = passwordRef.current?.value;
 
-    if (id !== "kdao") {
-      showToast("User is not available", "error");
+    if (!id?.includes(MUST_INCLUDED)) {
+      showToast("Invalid username or password.", "error");
       return;
     }
 
