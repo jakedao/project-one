@@ -6,7 +6,7 @@ export const PRODUCTS: Product[] = [
     name: "SNICKERS",
     price: 28.84,
     desc: "SNICKERS, TWIX, & MILKY WAY Minis Chocolate Candy Bars Variety Pack, 150 Ct Bulk Bag",
-    images: ["snickers_1.png", "snickers_2.png"],
+    images: ["snickers_1.png"],
     flavor: "milk",
   },
   {

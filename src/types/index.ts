@@ -47,6 +47,7 @@ export interface Text {
   align?: "left" | "center" | "right";
   onClick?: () => void;
   maxLine?: number;
+  width?: number;
 }
 
 export interface SelectField {

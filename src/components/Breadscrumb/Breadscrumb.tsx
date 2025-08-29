@@ -24,7 +24,10 @@ const Breadscrum = () => {
       const notLastIndex = index < BREADSCRUMB.length - 1;
 
       return (
-        <div className="breadscrumb__item" key={br.to}>
+        <div
+          className={`breadscrumb__item ${!notLastIndex ? "disabled" : ""}`}
+          key={br.to}
+        >
           <LinkItem to={br.to} label={br.label} />
           {notLastIndex && <ArrowRight size={24} />}
         </div>

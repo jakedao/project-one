@@ -42,7 +42,7 @@ const CartItemDesktop = (item: ItemCart) => {
         <div className="cart-item__image">
           <img src={images[0]} />
         </div>
-        <Text size="title" fontWeight={800} maxLine={2}>
+        <Text size="title" fontWeight={800} maxLine={2} width={150}>
           {name}
         </Text>
       </div>

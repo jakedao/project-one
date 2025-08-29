@@ -12,6 +12,7 @@ const Text = (props: TextProps) => {
     align,
     color,
     maxLine,
+    width,
   } = props;
 
   const sizeMapper = {
@@ -53,6 +54,7 @@ const Text = (props: TextProps) => {
         fontWeight,
         textAlign: align || "inherit",
         color,
+        width,
         ...(maxLine && {
           WebkitLineClamp: maxLine.toString(),
           overflow: "hidden",
