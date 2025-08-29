@@ -74,13 +74,7 @@ const ImageCarousel = (props: TOwnProps) => {
         )}
         onClick={() => onSelectImage(img.id)}
       >
-        <img
-          src={img.src}
-          alt={img.id}
-          onError={(e) => {
-            e.currentTarget.src = "images/no_image.png"; // Handle Error image fallback
-          }}
-        />
+        <img src={img.src} alt={img.id} />
       </div>
     ));
   };
@@ -101,12 +95,7 @@ const ImageCarousel = (props: TOwnProps) => {
         </IconButton>
       </div>
       <div className="carousel-image">
-        <img
-          src={selectedImage?.src}
-          onError={(e) => {
-            e.currentTarget.src = "images/no_image.png"; // Handle Error image fallback
-          }}
-        />
+        <img src={selectedImage?.src} />
       </div>
     </div>
   );
