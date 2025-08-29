@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": ".",
   "license": "MIT",
   "author": {
     "name": "Khanh Dao",
@@ -19,7 +20,8 @@
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.62.0",
     "react-router": "^7.7.1",
-    "yup": "^1.7.0"
+    "yup": "^1.7.0",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
