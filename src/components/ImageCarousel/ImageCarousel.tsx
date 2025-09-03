@@ -1,7 +1,7 @@
 import { ArrowDown, ArrowUp } from "@/assets/icons";
 import { useEffect, useState } from "react";
 
-import { combineClassNames } from "@/utils/common";
+import { useScreenSize } from "@/hooks";
 import { nanoid } from "nanoid";
 import { IconButton } from "../common";
 import "./ImageCarousel.scss";
@@ -12,6 +12,7 @@ type TOwnProps = {
 
 const ImageCarousel = (props: TOwnProps) => {
   const { images } = props;
+  const { isMobile } = useScreenSize();
   const [imageList, setImageList] = useState<
     {
       id: string;
@@ -66,12 +67,9 @@ const ImageCarousel = (props: TOwnProps) => {
     return imageList.map((img) => (
       <div
         key={img.id}
-        className={combineClassNames(
-          "image-swiper",
-          `__image-wrapper image-swiper__image-wrapper${
-            img.selected ? "--selected" : ""
-          }`
-        )}
+        className={`image__navigation image__navigation${
+          img.selected ? "--selected" : ""
+        }`}
         onClick={() => onSelectImage(img.id)}
       >
         <img src={img.src} alt={img.id} />
@@ -83,15 +81,15 @@ const ImageCarousel = (props: TOwnProps) => {
     <div className="carousel-wrapper">
       <div className="image-swiper">
         <IconButton onClick={() => onNavigateImage(true)}>
-          <ArrowUp size={32} />
+          <ArrowUp size={isMobile ? 24 : 60} />
         </IconButton>
-        <div className={"image-swiper__container"}>{renderImageList()}</div>
+        <div className="image__list__wrapper">{renderImageList()}</div>
         <IconButton
           onClick={() => {
             onNavigateImage(false);
           }}
         >
-          <ArrowDown size={32} />
+          <ArrowDown size={isMobile ? 24 : 60} />
         </IconButton>
       </div>
       <div className="carousel-image">

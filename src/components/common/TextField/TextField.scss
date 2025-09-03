@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: start;
   justify-content: start;
-  gap: 5px;
 }
 
 .text-field__wrapper {
@@ -12,7 +11,7 @@
   height: $text-field-height;
   background-color: $cold-ash;
   border-radius: 8px;
-
+  column-gap: 10px;
   svg {
     stroke: $garnet;
     position: absolute;
@@ -33,13 +32,12 @@
 .text-field {
   width: 100%;
   height: $text-field-height;
-  font-size: $text-base;
+  font-size: $text-title;
   color: $garnet;
   border: none;
   background-color: transparent;
   border-radius: 8px;
-  padding: 0rem;
-  padding-left: 10px;
+  padding-left: 1rem;
 
   &:focus {
     outline: none;
@@ -47,11 +45,13 @@
   }
 
   &::placeholder {
+    font-size: 20px;
     color: $charcoal;
   }
 
   &--with-icon {
     padding-left: 30px;
+    padding-right: 10px;
   }
 
   &--disabled {

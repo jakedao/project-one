@@ -9,19 +9,19 @@ const useCart = create<Cart>((set, get) => {
     totalPrice: 0,
     completed: false,
     addItem: (item, isBuyNow) => {
-      const currentItems = get().items;
+      const currentItems = getCartItems();
       let newItems = { ...currentItems } as Record<string, ItemCart>;
-      const newlyAdded = { ...newItems, [item.id]: { ...item, quantity: 1 } };
-      const currentItem = currentItems[item.id];
+      const selectedItem = currentItems[item.id];
 
-      if (currentItem && !isBuyNow) {
+      if (!isBuyNow) {
         newItems = {
           ...newItems,
-          [item.id]: { ...item, quantity: currentItem.quantity + 1 },
+          [item.id]: { ...item, quantity: (selectedItem?.quantity || 0) + 1 },
         };
       } else {
-        newItems = newlyAdded;
+        newItems = { [item.id]: { ...item, quantity: 1 } };
       }
+
       setCartItem(newItems);
       set({ items: newItems });
     },

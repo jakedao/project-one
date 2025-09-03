@@ -12,15 +12,10 @@ const Toast = () => {
     error: "--error",
     info: "--info",
   };
+  if (!message) return;
 
   return (
-    <div
-      className={combineClassNames(
-        "toast",
-        toastTypeMapper[type],
-        message ? "--show" : ""
-      )}
-    >
+    <div className={combineClassNames("toast", toastTypeMapper[type])}>
       <ErrorIcon size={24} />
       <Text size="text-lg">{message}</Text>
     </div>

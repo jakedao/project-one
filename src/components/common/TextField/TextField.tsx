@@ -16,6 +16,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
     placeholder = "",
     errorText = "",
     width,
+    height,
     ...rest
   } = props;
 
@@ -30,7 +31,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>((props, ref) => {
           disabledClass,
           errorClass
         )}
-        style={{ width: width }}
+        style={{ width: width, height }}
       >
         {startIcon ? startIcon : null}
         <input

@@ -27,7 +27,9 @@ const Pagination = () => {
           page === p ? "--selected" : ""
         )} ${p === NULLISH_PAGE ? "disabled" : ""}`}
       >
-        <Text size="title">{p}</Text>
+        <Text size="title" fontWeight={700}>
+          {p}
+        </Text>
       </div>
     ));
   };
@@ -40,7 +42,7 @@ const Pagination = () => {
           onUpdateParams({ ...searchParams, page: page - 1 });
         }}
       >
-        <Previous size={28} />
+        <Previous size={22} />
       </IconButton>
       <div className="pagination__paging">{renderPaging()}</div>
       <IconButton
@@ -49,7 +51,7 @@ const Pagination = () => {
           onUpdateParams({ ...searchParams, page: page + 1 });
         }}
       >
-        <Next size={28} />
+        <Next size={22} />
       </IconButton>
 
       <LimitDropdown />

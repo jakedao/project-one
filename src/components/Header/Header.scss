@@ -1,5 +1,5 @@
 .header {
-  height: $header-height;
+  height: $header-height - 10px;
   background-color: $grullo;
   padding: 15px 24px;
   display: flex;
@@ -21,6 +21,7 @@
   }
 
   @include responsive("desktop") {
+    height: $header-height;
     .hamburger-menu {
       display: none;
     }

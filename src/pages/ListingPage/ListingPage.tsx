@@ -21,7 +21,7 @@ const ListingPage = () => {
     }
 
     if (!products.length) {
-      return <Text variant="h5">No data available</Text>;
+      return <Text variant="h5">No data found</Text>;
     }
     return products.map((d) => (
       <ProductCard key={d.id} {...d} imageSrc={d.images[0]} />
@@ -48,7 +48,8 @@ const ListingPage = () => {
       <div className="listing">
         <div className="listing__search__box">
           <TextField
-            width={250}
+            width={isMobile ? 260 : 480}
+            height={40}
             startIcon={<SearchIcon size={24} />}
             placeholder="Type here to search"
             value={searchText}
@@ -64,9 +65,7 @@ const ListingPage = () => {
               }}
             >
               <FilterIcon size={24} />
-              <Text size="text-lg" fontWeight={600}>
-                Filter
-              </Text>
+              <Text size="text-lg">Filter</Text>
             </IconButton>
           )}
         </div>

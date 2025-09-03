@@ -1,0 +1,28 @@
+.not__allow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  row-gap: 68px;
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px;
+    column-gap: 5px;
+
+    @include responsive("desktop") {
+      flex-direction: row;
+      padding: 0;
+    }
+  }
+
+  &__login__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 32px;
+  }
+}

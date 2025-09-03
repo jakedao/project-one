@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: start;
-  row-gap: 16px;
 
   background-color: $grullo;
   border-radius: 8px;
@@ -12,8 +11,14 @@
   cursor: pointer;
 
   &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
     text-align: start;
     width: 100%;
+    height: 66px;
+    margin-top: 12px;
+    row-gap: 12px;
   }
 
   &__price {
@@ -34,7 +39,7 @@
     & img {
       width: 160px;
       height: 130px;
-      object-fit: contain;
+      object-fit: fill;
       background-color: $cold-ash;
       align-self: contain;
     }

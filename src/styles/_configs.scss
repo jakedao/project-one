@@ -1,9 +1,10 @@
 $header-height: 70px;
+$header-mobile-height: 60px;
 
 $menu-width: 200px;
 $menu-text-width: 180px;
-$drawer-width: 380px;
-$drawer-height: calc(100vh - $header-height);
+$drawer-width: 340px;
+$drawer-height: calc(100vh - 60px);
 
 $button-height: 40px;
 $button-width: 180px;
@@ -13,7 +14,7 @@ $text-field-height: 50px;
 
 $product_card_width: 180px;
 $product_card_height: 220px;
-$product_card_mobile_width: 110px;
+$product_card_mobile_width: 106px;
 $product_card_mobile_height: 150px;
 
-$listing-container-height: 700px;
+$listing-container-height: 560px;

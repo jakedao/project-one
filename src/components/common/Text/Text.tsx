@@ -54,7 +54,7 @@ const Text = (props: TextProps) => {
         fontWeight,
         textAlign: align || "inherit",
         color,
-        width,
+        width: width || "inherit",
         ...(maxLine && {
           WebkitLineClamp: maxLine.toString(),
           overflow: "hidden",

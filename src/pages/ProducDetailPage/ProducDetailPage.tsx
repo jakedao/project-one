@@ -1,4 +1,4 @@
-import { Star } from "@/assets/icons";
+import { ShoppingCart, Star } from "@/assets/icons";
 import { ImageCarousel } from "@/components";
 import { Button, Chip, Text } from "@/components/common";
 import { ERoute } from "@/configs/router";
@@ -14,9 +14,10 @@ type TOwnProps = {};
 const ProductDetailsPage = (props: TOwnProps) => {
   const {} = props;
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
+
   const { addItem } = useCart();
   const { showToast } = useToast();
-  const navigate = useNavigate();
   const { isMobile } = useScreenSize();
 
   const [selectedProduct, setSelectedProduct] = useState<Product>();
@@ -38,7 +39,7 @@ const ProductDetailsPage = (props: TOwnProps) => {
   };
 
   const buyNow = () => {
-    addItem(selectedProduct);
+    addItem(selectedProduct, true);
     navigate("/" + ERoute.CHECKOUT);
   };
 
@@ -94,10 +95,22 @@ const ProductDetailsPage = (props: TOwnProps) => {
         </div>
       </div>
       <div className="detail__page__cta">
-        <Button variant="secondary" onClick={handleAddItem}>
-          Add to cart
+        <Button
+          variant="secondary"
+          onClick={handleAddItem}
+          width={170}
+          height={40}
+        >
+          <div style={{ display: "flex", columnGap: 8, flexDirection: "row" }}>
+            <ShoppingCart size={20} />
+            <Text align="center" size="title">
+              Add to cart
+            </Text>
+          </div>
         </Button>
-        <Button onClick={buyNow}>Buy now</Button>
+        <Button onClick={buyNow} width={170} height={40}>
+          Buy now
+        </Button>
       </div>
     </div>
   );

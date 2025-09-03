@@ -1,7 +1,7 @@
 type TOwnProps = {};
 import { Chocolate, HamburgerMenu, ShoppingCart } from "@/assets/icons";
 import { ERoute, NAVIGATIONS } from "@/configs/router";
-import { useCart } from "@/hooks";
+import { useCart, useScreenSize } from "@/hooks";
 import { getOrinalRoute } from "@/utils/common";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router";
@@ -20,6 +20,8 @@ const Header = (props: TOwnProps) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { items } = useCart();
+  const { isMobile } = useScreenSize();
+  const mobileSvgSize = isMobile ? 32 : 40;
 
   const onNavigate = (value: string) => {
     navigate("/" + value);
@@ -42,10 +44,10 @@ const Header = (props: TOwnProps) => {
     <>
       <div className="header">
         <div className="hamburger-menu" onClick={onOpenHambergurMenu}>
-          <HamburgerMenu size={32} />
+          <HamburgerMenu size={mobileSvgSize} />
         </div>
         <IconButton onClick={() => navigate("/" + ERoute.HOME)}>
-          <Chocolate size={32} />
+          <Chocolate size={mobileSvgSize} />
         </IconButton>
         <Navigation />
         <div className="header__right">
@@ -54,7 +56,10 @@ const Header = (props: TOwnProps) => {
               navigate("/" + ERoute.CHECKOUT);
             }}
           >
-            <ShoppingCart hasItem={Object.keys(items).length > 0} size={32} />
+            <ShoppingCart
+              hasItem={Object.keys(items).length > 0}
+              size={mobileSvgSize}
+            />
           </IconButton>
           <UserMenu />
         </div>

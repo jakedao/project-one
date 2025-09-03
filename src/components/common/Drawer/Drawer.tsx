@@ -6,11 +6,11 @@ import "./Drawer.scss";
 const Drawer = () => {
   const { open, onClose, component } = useDrawer();
 
-  const openClass = open ? "--open" : "";
+  if (!open) return;
 
   return (
-    <div className={combineClassNames("drawer__wrapper", openClass)}>
-      <div className={combineClassNames("drawer", openClass)}>
+    <div className={combineClassNames("drawer__wrapper")}>
+      <div className={combineClassNames("drawer")}>
         <ClickAwayListener onClickAway={onClose} shouldListen={open}>
           {component}
         </ClickAwayListener>

@@ -8,6 +8,7 @@ import {
   OrderSummaryPage,
   ProductDetailsPage,
 } from "@/pages";
+import NotAllowPage from "@/pages/NotAllowPage/NotAllowPage";
 import { createBrowserRouter } from "react-router";
 
 export enum ERoute {
@@ -40,7 +41,8 @@ const router = createBrowserRouter([
     Component: AppLayout,
     children: [
       // PUBLIC ROUTES
-      { path: "/login", Component: LoginPage },
+      { path: `/${ERoute.LOGIN}`, Component: LoginPage },
+      { path: `/${ERoute.NOT_ALLOW}`, Component: NotAllowPage },
 
       // PROTECTED ROUTES
       { path: `/${ERoute.HOME}`, Component: LandingPage },

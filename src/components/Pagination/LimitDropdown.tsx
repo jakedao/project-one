@@ -1,3 +1,4 @@
+import { ArrowDown } from "@/assets/icons";
 import usePaginator from "@/hooks/usePaginator";
 import { useState } from "react";
 import { ClickAwayListener, Text } from "../common";
@@ -19,7 +20,10 @@ const LimitDropdown = () => {
     if (!expanded) {
       return (
         <div className="limit__item">
-          <Text size="text-lg">{limit}</Text>
+          <Text align="center" size="text-lg" width={limit < 10 ? 9 : 18}>
+            {limit}
+          </Text>
+          <ArrowDown size={18} />
         </div>
       );
     }
@@ -28,12 +32,15 @@ const LimitDropdown = () => {
       <div
         key={t}
         className={"limit__item"}
+        style={{ height: 26 }}
         onClick={(e) => {
           e.stopPropagation();
           handleSelectLimit(t);
         }}
       >
-        <Text size="text-lg">{t}</Text>
+        <Text align="center" size="text-lg">
+          {t}
+        </Text>
       </div>
     ));
   };

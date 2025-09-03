@@ -42,7 +42,9 @@ const Button = (props: TOwnProps) => {
       onClick={onClick}
     >
       {typeof children === "string" ? (
-        <Text size="title">{children}</Text>
+        <Text size="title" align="center">
+          {children}
+        </Text>
       ) : (
         children
       )}

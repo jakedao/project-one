@@ -5,7 +5,7 @@
     -webkit-appearance: none;
     appearance: none;
     position: absolute;
-    width: 180px;
+    width: 197px;
     border-radius: 16px;
 
     // background: none;
@@ -17,7 +17,7 @@
 
   & input[type="range"]::-webkit-slider-runnable-track {
     width: 100%;
-    height: 5px;
+    height: 7px;
     cursor: pointer;
     animate: 0.2s;
     // background-color: $garnet;

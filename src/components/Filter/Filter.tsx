@@ -83,10 +83,17 @@ const Filter = () => {
       </div>
 
       <div className="filter__cta">
-        <Button variant="secondary" onClick={onResetFilter}>
+        <Button
+          width={120}
+          height={30}
+          variant="secondary"
+          onClick={onResetFilter}
+        >
           Reset
         </Button>
-        <Button onClick={onApplyFilter}>Apply</Button>
+        <Button width={120} height={30} onClick={onApplyFilter}>
+          Apply
+        </Button>
       </div>
     </div>
   );

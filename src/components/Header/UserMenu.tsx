@@ -1,6 +1,7 @@
 import { AvatarBadge } from "@/assets/icons";
 import { ERoute } from "@/configs/router";
 import { LOCAL_STORAGE_KEYS } from "@/constants";
+import { useScreenSize } from "@/hooks";
 import type { MenuPosition } from "@/types";
 import { useState } from "react";
 import { useNavigate } from "react-router";
@@ -14,13 +15,14 @@ const MENU_ITEMS = [
 const UserMenu = () => {
   const navigate = useNavigate();
   const [menuPos, setMenuPos] = useState<MenuPosition>();
+  const { isMobile } = useScreenSize();
 
   const handleSelect = (value: number | string) => {
     if (Number(value) === 1) return;
 
     localStorage.removeItem(LOCAL_STORAGE_KEYS.ACCESS_INFO);
 
-    navigate(ERoute.LOGIN);
+    navigate(`/${ERoute.LOGIN}`);
   };
 
   return (
@@ -32,7 +34,7 @@ const UserMenu = () => {
           setMenuPos({ top: rect.top, left: rect.left });
         }}
       >
-        <AvatarBadge size={32} />
+        <AvatarBadge size={isMobile ? 32 : 40} />
       </IconButton>
       <Menu
         open={Boolean(menuPos)}
