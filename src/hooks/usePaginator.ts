@@ -1,8 +1,6 @@
 import { NULLISH_PAGE } from "@/constants";
-import { PRODUCTS } from "@/constants/data";
 import type { CustomSearchParams } from "@/types/listing";
 import { sanitizedSearchParams } from "@/utils/common";
-import { useCallback } from "react";
 import { useSearchParams } from "react-router";
 
 const usePaginator = () => {
@@ -17,7 +15,7 @@ const usePaginator = () => {
   const flavor = parsedSearchParms.flavor;
   const min = Number(parsedSearchParms.min) || 0;
   const max = Number(parsedSearchParms.max) || 100;
-  const total = Number(parsedSearchParms.total) || PRODUCTS.length;
+  const total = Number(parsedSearchParms.total) || 0;
   const maxPage = Math.ceil(total / limit);
   const keyword = parsedSearchParms.keyword;
 
@@ -27,7 +25,7 @@ const usePaginator = () => {
     setSearchParams(newParams);
   };
 
-  const generatePageSteps = useCallback(() => {
+  const generatePageSteps = () => {
     const MAX_RANGES = 3; // Visible number of pages
     const PAGE_GAP = Math.floor((MAX_RANGES - 1) / 2); // Maxium gap from the currentPage
     const possiblePages = [];
@@ -67,7 +65,7 @@ const usePaginator = () => {
       hasOtherNextPage ? NULLISH_PAGE : undefined,
       shouldShowMaxPage ? maxPage : undefined,
     ].filter(Boolean);
-  }, [page, maxPage]);
+  };
 
   const pageSteps = generatePageSteps();
 

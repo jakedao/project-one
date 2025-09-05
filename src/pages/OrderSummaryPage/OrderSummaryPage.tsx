@@ -7,9 +7,7 @@ import { currencyConverter } from "@/utils/common";
 import { useNavigate } from "react-router";
 import "./OrderSummaryPage.scss";
 
-type TOwnProps = {};
-const OrderSummaryPage = (props: TOwnProps) => {
-  const {} = props;
+const OrderSummaryPage = () => {
   const navigate = useNavigate();
   const { items } = useCart();
   const { isMobile } = useScreenSize();
