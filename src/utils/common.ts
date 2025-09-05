@@ -16,9 +16,10 @@ export const checkDisabled = (disabled: boolean) => {
 
 export const currencyConverter = (price: number) => {
   return Intl.NumberFormat("en-US", {
-    maximumSignificantDigits: 10,
+    maximumSignificantDigits: 5,
     style: "currency",
     currency: "USD",
+    notation: "compact",
   }).format(price);
 };
 

@@ -8,7 +8,7 @@ const DoubleArrowLeft = (props: Icon) => {
       width={size}
       height={size}
       viewBox="0 0 40 40"
-      fill="none"
+      fill="#792e29"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path

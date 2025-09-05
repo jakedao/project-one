@@ -20,6 +20,8 @@ const Breadscrum = () => {
     })
     .filter(Boolean);
 
+  const lastRoute = [...BREADSCRUMB].pop();
+
   const renderBreadscrumb = () => {
     const isProductDetails =
       BREADSCRUMB[1]?.to === ERoute.LISTING && BREADSCRUMB.length === 3;
@@ -54,7 +56,7 @@ const Breadscrum = () => {
     });
   };
 
-  if (BREADSCRUMB.length <= 1) return;
+  if (BREADSCRUMB.length <= 1 || lastRoute?.to === ERoute.CHECKOUT) return;
 
   return <div className="breadscrumb">{renderBreadscrumb()}</div>;
 };

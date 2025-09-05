@@ -101,7 +101,14 @@ const ProductDetailsPage = (props: TOwnProps) => {
           width={170}
           height={40}
         >
-          <div style={{ display: "flex", columnGap: 8, flexDirection: "row" }}>
+          <div
+            style={{
+              display: "flex",
+              columnGap: 8,
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
             <ShoppingCart size={20} />
             <Text align="center" size="title">
               Add to cart

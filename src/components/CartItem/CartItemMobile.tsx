@@ -40,7 +40,7 @@ const CartItemMobile = (item: ItemCart) => {
             {name}
           </Text>
           <Text
-            className="cart-item__desc__pricing"
+            className="cart-item__desc__pricing truncated"
             size="title"
             fontWeight={600}
           >

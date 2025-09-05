@@ -39,6 +39,17 @@ const LoginPage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("keyup", (e) => {
+      if (e.key === "Enter") {
+        handleLogin();
+      }
+    });
+    () => {
+      window.removeEventListener("keyup", handleLogin);
+    };
+  }, []);
+
   return (
     <div className="login-page">
       <Text variant="h5"> Login</Text>

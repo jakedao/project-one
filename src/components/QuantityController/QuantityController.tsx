@@ -12,17 +12,6 @@ const QuantityController = (props: TOwnProps) => {
   return (
     <div className="quantity-controller">
       <IconButton
-        onClick={(e) => {
-          e.stopPropagation();
-          onChangeQuantity(true);
-        }}
-      >
-        <PlusOutlined size={24} />
-      </IconButton>
-      <Text size="title" fontWeight={600}>
-        {quantity}
-      </Text>
-      <IconButton
         className={quantity === 1 ? "disabled" : ""}
         onClick={(e) => {
           e.stopPropagation();
@@ -30,6 +19,18 @@ const QuantityController = (props: TOwnProps) => {
         }}
       >
         <MinusOutlined size={24} />
+      </IconButton>
+
+      <Text size="title" fontWeight={600}>
+        {quantity}
+      </Text>
+      <IconButton
+        onClick={(e) => {
+          e.stopPropagation();
+          onChangeQuantity(true);
+        }}
+      >
+        <PlusOutlined size={24} />
       </IconButton>
     </div>
   );

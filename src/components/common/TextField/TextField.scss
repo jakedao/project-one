@@ -45,8 +45,13 @@
   }
 
   &::placeholder {
-    font-size: 20px;
-    color: $charcoal;
+    font-size: 18px;
+    color: $garnet;
+
+    @include responsive("desktop") {
+      font-size: 20px;
+      color: $charcoal;
+    }
   }
 
   &--with-icon {

@@ -22,7 +22,9 @@ const LinkItem = (props: TOwnProps) => {
       }}
     >
       <div
-        className={`link__item${selected || isCurrentPath ? "-selected" : ""}`}
+        className={`link__item link__item${
+          selected || isCurrentPath ? "-selected" : ""
+        }`}
       >
         {label}
       </div>

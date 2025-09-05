@@ -49,7 +49,7 @@ const ListingPage = () => {
         <div className="listing__search__box">
           <TextField
             width={isMobile ? 260 : 480}
-            height={40}
+            height={isMobile ? 40 : 52}
             startIcon={<SearchIcon size={24} />}
             placeholder="Type here to search"
             value={searchText}

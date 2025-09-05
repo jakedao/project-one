@@ -1,4 +1,9 @@
-import { Next, Previous } from "@/assets/icons";
+import {
+  DoubleArrowLeft,
+  DoubleArrowRight,
+  Next,
+  Previous,
+} from "@/assets/icons";
 import { NULLISH_PAGE } from "@/constants";
 import usePaginator from "@/hooks/usePaginator";
 import { combineClassNames } from "@/utils/common";
@@ -39,6 +44,14 @@ const Pagination = () => {
       <IconButton
         className={disabledLogics.canPrevious}
         onClick={() => {
+          onUpdateParams({ ...searchParams, page: 1 });
+        }}
+      >
+        <DoubleArrowLeft size={22} />
+      </IconButton>
+      <IconButton
+        className={disabledLogics.canPrevious}
+        onClick={() => {
           onUpdateParams({ ...searchParams, page: page - 1 });
         }}
       >
@@ -52,6 +65,14 @@ const Pagination = () => {
         }}
       >
         <Next size={22} />
+      </IconButton>
+      <IconButton
+        className={disabledLogics.canNext}
+        onClick={() => {
+          onUpdateParams({ ...searchParams, page: maxPage });
+        }}
+      >
+        <DoubleArrowRight size={22} />
       </IconButton>
 
       <LimitDropdown />

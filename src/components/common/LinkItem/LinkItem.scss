@@ -4,6 +4,10 @@
   font-size: $text-title;
 
   &__item {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
     &:hover {
       font-weight: bold;
       text-decoration: underline;
