@@ -10,7 +10,7 @@ import type {
   FilterParams,
   RangeParams,
 } from "@/types/listing";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Checkbox, RangeSlider, Text } from "../common";
 import "./Filter.scss";
 
@@ -55,6 +55,16 @@ const Filter = () => {
     onUpdateParams(DEFAULT_SEARCH_PARAMS);
     onClose();
   };
+
+  useEffect(() => {
+    setFilter({
+      flavor: (flavor?.split(",") || []) as ChocolateFlavor[],
+      ranges: {
+        min,
+        max,
+      },
+    });
+  }, [flavor, min, max]);
 
   return (
     <div className="filter">

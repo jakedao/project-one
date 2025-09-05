@@ -14,7 +14,6 @@ const useListing = () => {
 
   const fetchData = async () => {
     setData((prev) => ({ ...prev, loading: true }));
-
     try {
       const parsedData = { limit, page, min, max, flavor, keyword };
 

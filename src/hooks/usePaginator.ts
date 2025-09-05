@@ -1,6 +1,7 @@
 import { NULLISH_PAGE } from "@/constants";
 import { PRODUCTS } from "@/constants/data";
 import type { CustomSearchParams } from "@/types/listing";
+import { sanitizedSearchParams } from "@/utils/common";
 import { useCallback } from "react";
 import { useSearchParams } from "react-router";
 
@@ -18,19 +19,12 @@ const usePaginator = () => {
   const max = Number(parsedSearchParms.max) || 100;
   const total = Number(parsedSearchParms.total) || PRODUCTS.length;
   const maxPage = Math.ceil(total / limit);
-  const keyword = parsedSearchParms.keyword || "";
+  const keyword = parsedSearchParms.keyword;
 
   const onUpdateParams = (args: CustomSearchParams) => {
-    const parsedSearchURL = new URLSearchParams({
-      ...searchParams,
-      ...args,
-    });
+    const newParams = sanitizedSearchParams(searchParams, args);
 
-    if (parsedSearchURL.get("flavor") === "undefined") {
-      parsedSearchURL.delete("flavor");
-    }
-
-    setSearchParams(parsedSearchURL);
+    setSearchParams(newParams);
   };
 
   const generatePageSteps = useCallback(() => {

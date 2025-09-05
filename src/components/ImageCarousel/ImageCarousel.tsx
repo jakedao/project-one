@@ -67,6 +67,7 @@ const ImageCarousel = (props: TOwnProps) => {
     return imageList.map((img) => (
       <div
         key={img.id}
+        id={img.selected ? "image-selected" : "image"}
         className={`image__navigation image__navigation${
           img.selected ? "--selected" : ""
         }`}
@@ -76,6 +77,13 @@ const ImageCarousel = (props: TOwnProps) => {
       </div>
     ));
   };
+
+  // WATCHER: listening image selection and move to view
+  useEffect(() => {
+    document
+      .getElementById("image-selected")
+      ?.scrollIntoView({ behavior: "smooth" });
+  }, [imageList]);
 
   return (
     <div className="carousel-wrapper">

@@ -1,3 +1,6 @@
+import type { CustomSearchParams } from "@/types/listing";
+
+// CSS utilities to attached the based class into new class - Used for BEM Convention
 export const combineClassNames = (
   basedClass: string,
   ...otherArgs: (string | undefined)[]
@@ -31,4 +34,39 @@ export const getOrinalRoute = (fullPath: string) => {
 
 export const upperCase = (text: string) => {
   return text.charAt(0).toUpperCase() + text.slice(1, text.length);
+};
+
+// Pipeline to transform
+export const sanitizedSearchParams = (
+  current: URLSearchParams,
+  params: CustomSearchParams
+): URLSearchParams => {
+  const parsedSearchURL = new URLSearchParams({ ...current, ...params });
+
+  const minVal = Number(parsedSearchURL.get("min"));
+  const maxVal = Number(parsedSearchURL.get("max"));
+  const flavors = parsedSearchURL.get("flavor") || "";
+
+  if (minVal < 0 || minVal > maxVal) {
+    parsedSearchURL.set("min", "0");
+  }
+
+  if (maxVal > 100 || minVal > maxVal) {
+    parsedSearchURL.set("max", "100");
+  }
+
+  /** Flavor validations will remove INVALID value. There are 2 cases:
+   * undefined
+   * Value not belong to any Filter Flavor
+   * **/
+
+  if (flavors === "undefined" || !["milk", "dark", "mixed"].includes(flavors)) {
+    parsedSearchURL.delete("flavor");
+  }
+
+  if (parsedSearchURL.get("keyword") === "undefined") {
+    parsedSearchURL.delete("keyword");
+  }
+
+  return parsedSearchURL;
 };
