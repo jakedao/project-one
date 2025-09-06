@@ -17,7 +17,7 @@ const Modal = () => {
       <div className="modal-wrapper">
         <div className="modal">
           <div className="modal__header">
-            <Text size="title" fontWeight={600}>
+            <Text size="title" fontWeight={600} align="center">
               {title || "Are you sure ?"}
             </Text>
           </div>
@@ -26,11 +26,20 @@ const Modal = () => {
             {children}
           </div>
           <div className="modal__footer">
-            <Button variant="secondary" onClick={onCancel}>
-              <Text size="text-lg">Cancel</Text>
+            <Button
+              variant="secondary"
+              onClick={onCancel}
+              width={130}
+              height={30}
+            >
+              <Text size="text-lg" align="center">
+                Cancel
+              </Text>
             </Button>
-            <Button onClick={onConfirm}>
-              <Text size="text-lg">OK</Text>
+            <Button onClick={onConfirm} width={130} height={30}>
+              <Text size="text-lg" align="center">
+                OK
+              </Text>
             </Button>
           </div>
         </div>

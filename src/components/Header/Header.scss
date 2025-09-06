@@ -1,7 +1,7 @@
 .header {
   height: $header-height - 10px;
   background-color: $grullo;
-  padding: 15px 24px;
+  padding: 5px 19px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,6 +22,8 @@
 
   @include responsive("desktop") {
     height: $header-height;
+    padding: 15px 24px;
+
     .hamburger-menu {
       display: none;
     }
@@ -29,5 +31,14 @@
     .navigation {
       display: flex;
     }
+  }
+}
+
+.main__logo {
+  position: absolute;
+  left: 203px;
+
+  @include responsive("desktop") {
+    position: inherit;
   }
 }

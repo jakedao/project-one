@@ -18,14 +18,10 @@ const CartItemDesktop = (item: ItemCart) => {
 
   const handleRemoveItem = () => {
     onTriggerModal &&
-      onTriggerModal(
-        "Are you sure",
-        `${name} will be removed from your cart`,
-        () => {
-          removeItem(id);
-          showToast("Item has been removed", "info");
-        }
-      );
+      onTriggerModal("Are you sure to remove this item", ``, () => {
+        removeItem(id);
+        showToast("Item has been removed", "info");
+      });
   };
 
   return (

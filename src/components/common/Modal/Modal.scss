@@ -3,7 +3,7 @@
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  width: 300px;
+  width: 320px;
   height: 150px;
   background-color: $timber-wolf;
   border-radius: 16px;
@@ -22,7 +22,8 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    margin-top: $padding-base * 2;
+    margin-top: $padding-base * 8;
+    column-gap: 16px;
 
     .button {
       margin-right: $padding-base;

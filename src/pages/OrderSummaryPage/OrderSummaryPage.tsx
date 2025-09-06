@@ -77,7 +77,7 @@ const OrderSummaryPage = () => {
           }}
         >
           <ArrowLeft size={24} />
-          <Text color="#792e29" fontWeight={600}>
+          <Text color="#792e29" fontWeight={600} size="title">
             Return to listing
           </Text>
         </div>

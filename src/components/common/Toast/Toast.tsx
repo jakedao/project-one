@@ -12,6 +12,7 @@ const Toast = () => {
     error: "--error",
     info: "--info",
   };
+
   if (!message) return;
 
   return (

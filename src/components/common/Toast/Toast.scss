@@ -2,14 +2,20 @@
   position: fixed;
   display: flex;
   align-items: center;
-  top: 20px;
+  height: 40px;
+  top: $header-mobile-height;
   right: 20px;
   padding: 16px 8px;
   border-radius: 4px;
   @include castShadow();
 
+  @include responsive("desktop") {
+    top: $header-height;
+    width: 400px;
+  }
+
   & svg {
-    margin-right: 12px;
+    margin-right: 26px;
   }
 
   &--info {
