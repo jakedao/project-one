@@ -20,9 +20,10 @@ const Header = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const { items } = useCart();
+  const { getItemByUser } = useCart();
   const { isMobile } = useScreenSize();
   const mobileSvgSize = isMobile ? 32 : 40;
+  const items = getItemByUser();
 
   const onNavigate = (value: string) => {
     navigate("/" + value);
@@ -63,10 +64,7 @@ const Header = () => {
               navigate("/" + ERoute.CHECKOUT);
             }}
           >
-            <ShoppingCart
-              hasItem={Object.keys(items).length > 0}
-              size={mobileSvgSize}
-            />
+            <ShoppingCart hasItem={items.length > 0} size={mobileSvgSize} />
           </IconButton>
           <UserMenu />
         </div>

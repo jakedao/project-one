@@ -34,15 +34,14 @@ export type FilterParams = {
 
 export type ItemCart = Product & {
   quantity: number;
+  userId: string;
 };
 
 export interface Cart {
-  items: {
-    [key in string]: ItemCart;
-  };
+  items: ItemCart[];
   totalPrice: number;
   completed?: boolean;
-
+  getItemByUser: () => ItemCart[];
   addItem: (item: Product, isBuyNow?: boolean) => void;
   removeItem: (itemId: string) => void;
   proceedOrder: () => void;

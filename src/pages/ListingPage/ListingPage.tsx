@@ -5,6 +5,7 @@ import { ErrorComponent, Filter, Pagination } from "@/components";
 import { IconButton, ProductCard, Text, TextField } from "@/components/common";
 import { useDrawer, usePaginator, useScreenSize } from "@/hooks";
 import useListing from "@/hooks/useListing";
+
 import "./ListingPage.scss";
 
 const ListingPage = () => {
@@ -35,7 +36,7 @@ const ListingPage = () => {
       clearTimeout(timeout);
     }
     const timer = setTimeout(() => {
-      onUpdateParams({ ...searchParams, keyword: searchText });
+      onUpdateParams({ ...searchParams, keyword: searchText, page: 1 });
     }, 500);
     setTimeoutRef(timer);
     () => {
@@ -48,26 +49,31 @@ const ListingPage = () => {
       {!isMobile && <Filter />}
       <div className="listing">
         <div className="listing__search__box">
-          <TextField
-            width={isMobile ? 260 : 480}
-            height={isMobile ? 40 : 52}
-            startIcon={<SearchIcon size={24} />}
-            placeholder="Type here to search"
-            value={searchText}
-            onChange={(e) => {
-              setSearchText(e.target.value);
-            }}
-          />
-          {isMobile && (
-            <IconButton
-              onClick={(e) => {
-                e.stopPropagation();
-                onTriggerDrawer && onTriggerDrawer({ component: <Filter /> });
+          <div style={{ display: "flex", columnGap: "16px" }}>
+            <TextField
+              width={isMobile ? 260 : 480}
+              height={isMobile ? 40 : 52}
+              startIcon={<SearchIcon size={24} />}
+              placeholder="Type here to search"
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
               }}
-            >
-              <FilterIcon size={24} />
-              <Text size="text-lg">Filter</Text>
-            </IconButton>
+            />
+            {isMobile && (
+              <IconButton
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onTriggerDrawer && onTriggerDrawer({ component: <Filter /> });
+                }}
+              >
+                <FilterIcon size={24} />
+                <Text size="text-lg">Filter</Text>
+              </IconButton>
+            )}
+          </div>
+          {searchParams.keyword && (
+            <Text>{`Product related to keyword: ${searchParams.keyword}`}</Text>
           )}
         </div>
         <div className="listing__container">{renderListing()}</div>

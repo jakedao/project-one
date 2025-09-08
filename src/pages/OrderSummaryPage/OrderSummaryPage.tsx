@@ -6,24 +6,22 @@ import { Button, Text } from "@/components/common";
 import { ERoute } from "@/configs/router";
 import { useCart, useScreenSize } from "@/hooks";
 import { currencyConverter } from "@/utils/common";
+
 import "./OrderSummaryPage.scss";
 
 const OrderSummaryPage = () => {
   const navigate = useNavigate();
-  const { items } = useCart();
+  const { getItemByUser } = useCart();
   const { isMobile } = useScreenSize();
-  const cartItems = Object.keys(items).map((itemId) => items[itemId]);
+  const items = getItemByUser();
 
-  const subTotal = Object.keys(items)
-    .reduce(
-      (total, itemId) => total + items[itemId].quantity * items[itemId].price,
-      0
-    )
+  const subTotal = items
+    .reduce((total, itemId) => total + itemId.quantity * itemId.price, 0)
     .toFixed(2);
   const shippingFee = 2;
 
   const renderItemCart = () => {
-    return cartItems.map((item) => <CartItem key={item.id} {...item} />);
+    return items.map((item) => <CartItem key={item.id} {...item} />);
   };
 
   const renderFinalization = () => {
@@ -93,7 +91,7 @@ const OrderSummaryPage = () => {
           Order Summary
         </Text>
         <div className="order__summary__container">
-          {!cartItems.length ? (
+          {!items.length ? (
             <Text color="primary" size="title" fontWeight={600}>
               There is no item in your cart
             </Text>

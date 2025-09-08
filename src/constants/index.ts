@@ -16,7 +16,6 @@ export const RANGE_GAP = 10;
 export const DEFAULT_SEARCH_PARAMS = {
   page: 1,
   limit: 5,
-  flavor: "milk",
   min: 0,
   max: 100,
 } as CustomSearchParams;

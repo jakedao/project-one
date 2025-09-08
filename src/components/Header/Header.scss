@@ -3,6 +3,7 @@
   background-color: $grullo;
   padding: 5px 19px;
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
@@ -31,14 +32,5 @@
     .navigation {
       display: flex;
     }
-  }
-}
-
-.main__logo {
-  position: absolute;
-  left: 203px;
-
-  @include responsive("desktop") {
-    position: inherit;
   }
 }

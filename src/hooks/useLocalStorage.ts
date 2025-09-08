@@ -15,16 +15,25 @@ const useLocalStorage = () => {
     localStorage.setItem(LOCAL_STORAGE_KEYS.ACCESS_INFO, JSON.stringify(arg));
   };
 
-  const setCartItem = (arg: Record<string, ItemCart>) => {
-    localStorage.setItem(LOCAL_STORAGE_KEYS.CART_ITEMS, JSON.stringify(arg));
+  const setCartItem = (arg: ItemCart[]) => {
+    const currentUser = getAcessInfo()!.name;
+    const currentCartItems = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEYS.CART_ITEMS) || "{}"
+    );
+
+    localStorage.setItem(
+      LOCAL_STORAGE_KEYS.CART_ITEMS,
+      JSON.stringify({ ...currentCartItems, [currentUser]: arg })
+    );
   };
 
-  const getCartItems = () => {
+  const getCartItems = (): ItemCart[] => {
+    const currentUser = getAcessInfo()!.name;
     const items = localStorage.getItem(LOCAL_STORAGE_KEYS.CART_ITEMS);
     if (items) {
-      return JSON.parse(items) as Record<string, ItemCart>;
+      return JSON.parse(items)[currentUser] || ([] as ItemCart[]);
     }
-    return {};
+    return [];
   };
 
   return { setAccessInfo, getAcessInfo, setCartItem, getCartItems };

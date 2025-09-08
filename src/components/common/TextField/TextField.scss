@@ -31,13 +31,17 @@
 
 .text-field {
   width: 100%;
-  height: $text-field-height;
+  height: $text-field-height - 10;
   font-size: $text-title;
   color: $garnet;
   border: none;
   background-color: transparent;
   border-radius: 8px;
   padding-left: 1rem;
+
+  @include responsive("desktop") {
+    height: $text-field-height;
+  }
 
   &:focus {
     outline: none;

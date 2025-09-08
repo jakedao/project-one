@@ -59,8 +59,12 @@ export const sanitizedSearchParams = (
    * undefined
    * Value not belong to any Filter Flavor
    * **/
+  const flavorArr = flavors.split(",");
+  const isValidFlavor = flavorArr.some((f) =>
+    ["milk", "dark", "mixed"].includes(f)
+  );
 
-  if (flavors === "undefined" || !["milk", "dark", "mixed"].includes(flavors)) {
+  if (flavors === "undefined" || !isValidFlavor) {
     parsedSearchURL.delete("flavor");
   }
 

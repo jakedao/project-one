@@ -1,21 +1,24 @@
 import { AvatarBadge } from "@/assets/icons";
 import { ERoute } from "@/configs/router";
 import { LOCAL_STORAGE_KEYS } from "@/constants";
-import { useScreenSize } from "@/hooks";
+import { useLocalStorage, useScreenSize } from "@/hooks";
 import type { MenuPosition } from "@/types";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { IconButton, Menu } from "../common";
 
-const MENU_ITEMS = [
-  { value: 1, label: "Info" },
-  { value: 2, label: "Sign out" },
-];
-
 const UserMenu = () => {
+  const { getAcessInfo } = useLocalStorage();
   const navigate = useNavigate();
   const [menuPos, setMenuPos] = useState<MenuPosition>();
   const { isMobile } = useScreenSize();
+
+  const currentUser = getAcessInfo()!.name;
+
+  const MENU_ITEMS = [
+    { value: 1, label: `Hello, ${currentUser}` },
+    { value: 2, label: "Sign out" },
+  ];
 
   const handleSelect = (value: number | string) => {
     if (Number(value) === 1) return;
