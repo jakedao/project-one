@@ -48,12 +48,17 @@ const Text = (props: TextProps) => {
     return children;
   };
 
+  const colorMapping: Record<string, string> = {
+    primary: "#792e29",
+    secondary: "#aba38f",
+  };
+
   return (
     <div
       style={{
         fontWeight,
         textAlign: align || "inherit",
-        color,
+        color: color && (colorMapping[color] || color),
         width: width || "inherit",
         ...(maxLine && {
           WebkitLineClamp: maxLine.toString(),

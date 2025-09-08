@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { FilterIcon, SearchIcon } from "@/assets/icons";
-import { Filter, Pagination } from "@/components";
+import { ErrorComponent, Filter, Pagination } from "@/components";
 import { IconButton, ProductCard, Text, TextField } from "@/components/common";
 import { useDrawer, usePaginator, useScreenSize } from "@/hooks";
 import useListing from "@/hooks/useListing";
@@ -22,7 +22,7 @@ const ListingPage = () => {
     }
 
     if (!products.length) {
-      return <Text variant="h5">No data found</Text>;
+      return <ErrorComponent text="No data found" />;
     }
     return products.map((d) => (
       <ProductCard key={d.id} {...d} imageSrc={d.images[0]} />

@@ -17,7 +17,7 @@ const NotAllowPage = () => {
     <div className="not__allow">
       <div className="not__allow__title">
         <DissasitfiedIcon size={50} />
-        <Text variant="h5" color="#792e29" align={isMobile ? "center" : "left"}>
+        <Text variant="h5" color="primary" align={isMobile ? "center" : "left"}>
           Not allow to access this page
         </Text>
       </div>

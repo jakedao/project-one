@@ -1,9 +1,9 @@
-import { NotAllowed } from "@/components";
+import { ErrorComponent } from "@/components";
 
 const NotFoundPage = () => {
   return (
     <div>
-      <NotAllowed />
+      <ErrorComponent text="Page is nt available" />
     </div>
   );
 };

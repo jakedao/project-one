@@ -17,6 +17,7 @@ const Header = () => {
     top: number;
     left: number;
   }>();
+
   const navigate = useNavigate();
   const location = useLocation();
   const { items } = useCart();

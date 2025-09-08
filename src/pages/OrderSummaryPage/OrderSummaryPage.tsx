@@ -78,7 +78,7 @@ const OrderSummaryPage = () => {
           }}
         >
           <ArrowLeft size={24} />
-          <Text color="#792e29" fontWeight={600} size="title">
+          <Text color="primary" fontWeight={600} size="title">
             Return to listing
           </Text>
         </div>
@@ -94,7 +94,9 @@ const OrderSummaryPage = () => {
         </Text>
         <div className="order__summary__container">
           {!cartItems.length ? (
-            <Text size="title">There is no item in your cart</Text>
+            <Text color="primary" size="title" fontWeight={600}>
+              There is no item in your cart
+            </Text>
           ) : (
             <>
               <div className="order__summary__items">{renderItemCart()}</div>
