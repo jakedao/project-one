@@ -58,12 +58,14 @@ const LoginPage = () => {
           placeholder="Username *"
           ref={idRef}
           width={isMobile ? 330 : 350}
+          height={isMobile ? 40 : 52}
         />
         <TextField
           placeholder="Password *"
           ref={passwordRef}
           type="password"
           width={isMobile ? 330 : 350}
+          height={isMobile ? 40 : 52}
         />
       </div>
       <Button width={180} height={40} onClick={handleLogin}>
