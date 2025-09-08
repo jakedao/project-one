@@ -1,8 +1,9 @@
 import type { Custom3DHook, TNavigator } from "@/types/demo";
 import {
-  Axis,
+  Color3,
+  HighlightLayer,
+  Mesh,
   MeshBuilder,
-  Space,
   StandardMaterial,
   Texture,
   Tools,
@@ -16,6 +17,18 @@ const use3D = create<Custom3DHook>((set, get) => ({
     set({ scene: arg });
   },
   selectMesh: (arg) => {
+    const currentScene = get().scene;
+
+    const currentHighlight = currentScene?.getHighlightLayerByName("hl");
+    if (currentHighlight) {
+      currentHighlight.dispose();
+    }
+
+    const newHighlight = new HighlightLayer("hl", currentScene);
+
+    // Applying highlight on new mesh
+    newHighlight.addMesh(arg as Mesh, Color3.White());
+
     set({ selectedMesh: arg });
   },
   addBox: (size: number) => {
@@ -66,8 +79,7 @@ const use3D = create<Custom3DHook>((set, get) => ({
     if (newScene) {
       const newMeshes = newScene.meshes.map((mesh) => {
         if (mesh.id === meshId) {
-          console.log("checking deg", deg);
-          mesh.rotate(Axis.Y, Tools.ToRadians(deg), Space.LOCAL);
+          mesh.rotation.y = Tools.ToRadians(deg);
         }
         return mesh;
       });

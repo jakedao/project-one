@@ -28,7 +28,7 @@ const LoginPage = () => {
     }
 
     showToast("Logged in successfully", "success");
-    setAccessInfo({ name: "Khanh Dao", email: `khdao@gmail.com-${password}` });
+    setAccessInfo({ name: id, email: `${id}-${password}` });
     navigate(`/${ERoute.LISTING}`);
   };
 

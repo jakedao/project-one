@@ -18,7 +18,7 @@ const SelectForm = (props: TOwnProps) => {
         return (
           <>
             <SelectField
-              width="80%"
+              width="100%"
               options={options}
               onChange={field.onChange}
               value={field.value as string}

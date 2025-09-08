@@ -1,9 +1,10 @@
+import { useEffect, useState } from "react";
+
 import { FilterIcon, SearchIcon } from "@/assets/icons";
 import { Filter, Pagination } from "@/components";
 import { IconButton, ProductCard, Text, TextField } from "@/components/common";
 import { useDrawer, usePaginator, useScreenSize } from "@/hooks";
 import useListing from "@/hooks/useListing";
-import { useEffect, useState } from "react";
 import "./ListingPage.scss";
 
 const ListingPage = () => {
@@ -71,7 +72,7 @@ const ListingPage = () => {
         </div>
         <div className="listing__container">{renderListing()}</div>
 
-        <Pagination />
+        {!loading && <Pagination />}
       </div>
     </div>
   );

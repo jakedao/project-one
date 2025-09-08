@@ -13,17 +13,19 @@ const Form = () => {
 
   return (
     <>
-      <Text variant="h5">Form Controller</Text>
+      <Text variant="h5" align="center" width="100%">
+        Form Controller
+      </Text>
       <div className="demo__page__section__item">
         <InputField
-          width="80%"
+          width="100%"
           name="name"
           control={control}
           placeholder="Object name"
         />
 
         <SelectForm name="shape" control={control} options={SHAPE_OPTIONS} />
-        <SliderField control={control} name="size" title="Object sizing" />
+        <SliderField control={control} name="size" title="Object size" />
       </div>
     </>
   );

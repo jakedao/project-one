@@ -1,10 +1,11 @@
+import { useNavigate } from "react-router";
+
 import ArrowLeft from "@/assets/icons/Previous";
 import { CartItem } from "@/components";
 import { Button, Text } from "@/components/common";
 import { ERoute } from "@/configs/router";
 import { useCart, useScreenSize } from "@/hooks";
 import { currencyConverter } from "@/utils/common";
-import { useNavigate } from "react-router";
 import "./OrderSummaryPage.scss";
 
 const OrderSummaryPage = () => {

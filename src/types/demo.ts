@@ -5,7 +5,7 @@ export type TShape = "box" | "sphere";
 export interface DemoForm {
   name: string;
   size: number;
-  shape: TShape;
+  shape?: TShape;
 }
 
 export interface Custom3DHook {

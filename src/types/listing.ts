@@ -34,6 +34,7 @@ export type FilterParams = {
 
 export type ItemCart = Product & {
   quantity: number;
+  userId: string;
 };
 
 export interface Cart {

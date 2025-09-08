@@ -78,7 +78,9 @@ const BabylonScene: React.FC<BabylonSceneProps> = (props) => {
         case PointerEventTypes.POINTERDOWN:
           if (pointerInfo.pickInfo?.hit) {
             // Check if a mesh was picked
+
             const pickedMesh = pointerInfo.pickInfo.pickedMesh;
+
             pickedMesh && selectMesh(pickedMesh);
             console.log(" DEBUGGING MESH - Clicked on:", pickedMesh?.name);
             // Your custom logic for the clicked mesh
@@ -117,7 +119,10 @@ const BabylonScene: React.FC<BabylonSceneProps> = (props) => {
   }, [font, currentScene, textSample]);
 
   return (
-    <canvas ref={canvasRef} style={{ width: "100%", height: "100%" }}></canvas>
+    <canvas
+      ref={canvasRef}
+      style={{ width: "100%", height: "100%", marginTop: "22px" }}
+    ></canvas>
   );
 };
 

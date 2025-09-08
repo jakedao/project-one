@@ -36,7 +36,7 @@ const Menu = forwardRef<HTMLDivElement, MenuProps>((props, ref) => {
         className="menu"
         ref={ref}
         style={{
-          top: (targetPos?.top || 0) + 30,
+          top: (targetPos?.top || 0) + 40,
           left: maxLeft,
         }}
       >

@@ -1,6 +1,6 @@
 import type { DemoForm } from "@/types/demo";
 import { Controller, type Control } from "react-hook-form";
-import { Slider, Text } from "../common";
+import { ErrorMessage, Slider, Text } from "../common";
 
 type TOwnProps = {
   name: keyof DemoForm;
@@ -14,7 +14,7 @@ const SliderField = (props: TOwnProps) => {
     <Controller
       name={name}
       control={control}
-      render={({ field }) => {
+      render={({ field, fieldState }) => {
         return (
           <div
             style={{
@@ -29,6 +29,9 @@ const SliderField = (props: TOwnProps) => {
               </Text>
             )}
             <Slider value={Number(field.value)} onChange={field.onChange} />
+            {fieldState.error?.message && (
+              <ErrorMessage message={fieldState.error.message} />
+            )}
           </div>
         );
       }}

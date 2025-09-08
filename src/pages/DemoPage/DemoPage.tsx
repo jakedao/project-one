@@ -1,14 +1,19 @@
-import { Button, Slider, Text } from "@/components/common";
-import use3D from "@/hooks/use3D";
-import { schema } from "@/schemes";
-import type { DemoForm, TNavigator } from "@/types/demo";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { FormProvider, useForm } from "react-hook-form";
-import Controller from "./Controller";
+
+import { Button, Slider, Text } from "@/components/common";
+import { BabylonScene, Controller, Form } from "@/components/DemoComponents";
+import use3D from "@/hooks/use3D";
+import { schema } from "@/schemes";
+import type { DemoForm, TNavigator } from "@/types/demo";
+
 import "./DemoPage.scss";
-import Form from "./Form";
-import BabylonScene from "./SceneComponent";
+
+const DEFAULT_VALUES: DemoForm = {
+  name: "",
+  size: 0,
+};
 
 const DemoPage = () => {
   const [data, setData] = useState<DemoForm>();
@@ -17,12 +22,9 @@ const DemoPage = () => {
 
   const formInstance = useForm<DemoForm>({
     resolver: yupResolver(schema),
-    defaultValues: {
-      shape: "box",
-      size: 0,
-    },
+    defaultValues: DEFAULT_VALUES,
   });
-  const { handleSubmit } = formInstance;
+  const { handleSubmit, reset } = formInstance;
 
   const onSubmitForm = (formValues: DemoForm) => {
     setData(formValues);
@@ -40,34 +42,64 @@ const DemoPage = () => {
     }
   };
 
+  const onReset = () => {
+    reset(DEFAULT_VALUES);
+  };
+
   return (
     <FormProvider {...formInstance}>
       <div className="demo__page">
         <div className="demo__page__section">
           <Form />
-          <Button width={250} onClick={handleSubmit(onSubmitForm)}>
-            <Text size="title" align="center">
-              Insert
-            </Text>
-          </Button>
+          <div className="form__actions">
+            <Button
+              variant="secondary"
+              width={180}
+              height={40}
+              onClick={() => {
+                onReset();
+              }}
+            >
+              <Text size="title" align="center">
+                Reset
+              </Text>
+            </Button>
+            <Button
+              width={180}
+              height={40}
+              onClick={handleSubmit(onSubmitForm)}
+            >
+              <Text size="title" align="center">
+                Confirm
+              </Text>
+            </Button>
+          </div>
         </div>
         <div className="demo__page__3d">
+          <Text variant="h5" align="center" width="100%">
+            BabylonJS
+          </Text>
           <BabylonScene textSample={data?.name} />
           <div className="demo__page__3d__toolbar">
-            <Text size="title">Rotation</Text>
-            <Slider
-              value={rotation}
-              min={0}
-              max={360}
-              step={1}
-              onChange={(e) => {
-                setRotation(e);
-                if (selectedMesh) {
-                  rotateMesh(e, selectedMesh.id);
-                }
-              }}
-            />
-            <Controller handler={handleNavigator} />
+            <div className="demo__page__3d__toolbar__item">
+              <Text size="title">Rotation</Text>
+              <Slider
+                value={rotation}
+                min={0}
+                max={360}
+                step={1}
+                onChange={(e) => {
+                  setRotation(e);
+                  if (selectedMesh) {
+                    rotateMesh(e, selectedMesh.id);
+                  }
+                }}
+              />
+            </div>
+            <div className="demo__page__3d__toolbar__item">
+              <Text size="title">Navigation</Text>
+              <Controller handler={handleNavigator} />
+            </div>
           </div>
         </div>
       </div>

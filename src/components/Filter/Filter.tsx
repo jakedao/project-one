@@ -43,6 +43,7 @@ const Filter = () => {
   const onApplyFilter = () => {
     onUpdateParams({
       ...searchParams,
+      page: 1,
       flavor: filter.flavor.join(","),
       min: filter.ranges.min,
       max: filter.ranges.max,
