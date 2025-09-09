@@ -8,6 +8,7 @@
   row-gap: 16px;
 
   & .main__card {
+    height: 700px;
     &__title {
       display: flex;
       flex-direction: column;
@@ -15,10 +16,6 @@
       & .text:last-child {
         margin-top: 16px;
       }
-    }
-
-    p {
-      padding-bottom: 48px;
     }
   }
 
@@ -28,9 +25,9 @@
     align-items: start;
     column-gap: 32px;
     row-gap: 0;
-    height: 832px;
 
     & .main__card {
+      height: 832px;
       max-width: 460px;
       padding: $padding-base * 10;
       display: flex;

@@ -3,7 +3,7 @@ import { ErrorComponent } from "@/components";
 const NotFoundPage = () => {
   return (
     <div>
-      <ErrorComponent text="Page is nt available" />
+      <ErrorComponent text="Page is not available" />
     </div>
   );
 };

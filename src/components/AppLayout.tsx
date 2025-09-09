@@ -23,6 +23,12 @@ const AppLayout = () => {
       return;
     }
 
+    // If user landed to index page will return to Login Page
+    if (location.pathname === "/") {
+      navigate(`/${ERoute.LOGIN}`);
+      return;
+    }
+
     if (location.pathname.split("/")[1] === "login") return;
 
     navigate(`/${ERoute.NOT_ALLOW}`);

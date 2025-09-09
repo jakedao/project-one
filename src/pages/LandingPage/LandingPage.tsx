@@ -32,7 +32,7 @@ const LandingPage = () => {
         <div className="card__image">
           <img src="images/profile.png" />
         </div>
-        <p>
+        <p style={{ paddingBottom: "48px" }}>
           <i>
             I am a JavaScript developer with 5 years of experience specializing
             in both front-end and back-end development. I have a strong
