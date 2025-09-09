@@ -10,16 +10,14 @@ html {
 }
 
 #root {
-  max-width: $desktop;
   color: $raisin-black;
-  background-color: $timber-wolf;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 body {
+  background-color: $timber-wolf;
   margin: 0 auto;
   height: 100vh;
   box-sizing: border-box;
@@ -45,6 +43,7 @@ body {
     padding: $padding-base * 10;
     height: calc(100vh - $header-height);
     width: 1512px;
+    height: 100%;
     filter: none;
   }
 }
