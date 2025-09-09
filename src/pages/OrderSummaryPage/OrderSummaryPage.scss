@@ -45,7 +45,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-height: 420px;
+  max-height: 460px;
   overflow-y: auto;
   row-gap: 30px;
   border-radius: 8px;
@@ -72,9 +72,9 @@
 .order__summary__total {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
   align-items: start;
-  height: 330px;
+  height: 300px;
   row-gap: 16px;
   padding: 24px;
   border-radius: 8px;
@@ -113,7 +113,6 @@
   // Checkout button
   & .button {
     align-self: center;
-    margin-top: 16px;
   }
 
   & .back__btn {
