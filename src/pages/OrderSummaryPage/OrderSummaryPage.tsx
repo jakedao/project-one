@@ -11,7 +11,7 @@ import "./OrderSummaryPage.scss";
 
 const OrderSummaryPage = () => {
   const navigate = useNavigate();
-  const { getItemByUser } = useCart();
+  const { getItemByUser, proceedOrder } = useCart();
   const { isMobile } = useScreenSize();
   const items = getItemByUser();
 
@@ -22,6 +22,11 @@ const OrderSummaryPage = () => {
 
   const renderItemCart = () => {
     return items.map((item) => <CartItem key={item.id} {...item} />);
+  };
+
+  const handleCompletePayment = () => {
+    proceedOrder();
+    navigate(`/${ERoute.SUCCESS}`, { state: { completed: true } });
   };
 
   const renderFinalization = () => {
@@ -46,7 +51,7 @@ const OrderSummaryPage = () => {
           </Text>
         </div>
 
-        <Button width={380} height={40}>
+        <Button width={380} height={40} onClick={handleCompletePayment}>
           <Text align="center" size="title">
             Proceed to checkout
           </Text>

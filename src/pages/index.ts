@@ -7,4 +7,5 @@ export { default as DemoPage } from "./DemoPage/DemoPage";
 export { default as LandingPage } from "./LandingPage/LandingPage";
 export { default as ListingPage } from "./ListingPage/ListingPage";
 export { default as OrderSummaryPage } from "./OrderSummaryPage/OrderSummaryPage";
+export { default as PaymentSuccessPage } from "./PaymentSuccessPage/PaymentSuccessPage";
 export { default as ProductDetailsPage } from "./ProducDetailPage/ProducDetailPage";

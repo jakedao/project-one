@@ -1,7 +1,7 @@
 import ArrowRight from "@/assets/icons/Next";
 import { ERoute } from "@/configs/router";
 import { PRODUCTS } from "@/constants/data";
-import { upperCase } from "@/utils/common";
+import { generatePageName, upperCase } from "@/utils/common";
 import { useLocation } from "react-router";
 import { LinkItem } from "../common";
 import "./Breadscrumb.scss";
@@ -15,7 +15,7 @@ const Breadscrum = () => {
       if (p === "home") return;
       return {
         to: p ? p : "home",
-        label: p ? upperCase(p) : "Home",
+        label: p ? generatePageName(upperCase(p)) : "Home",
       };
     })
     .filter(Boolean);
@@ -56,7 +56,12 @@ const Breadscrum = () => {
     });
   };
 
-  if (BREADSCRUMB.length <= 1 || lastRoute?.to === ERoute.CHECKOUT) return;
+  if (
+    BREADSCRUMB.length <= 1 ||
+    lastRoute?.to === ERoute.CHECKOUT ||
+    lastRoute?.to === ERoute.SUCCESS
+  )
+    return;
 
   return <div className="breadscrumb">{renderBreadscrumb()}</div>;
 };

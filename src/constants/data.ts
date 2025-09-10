@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "6",
-    name: "Kinder BUeno",
+    name: "Kinder Bueno",
     price: 23.24,
     desc: "Kinder Bueno Milk Chocolate and Hazelnut Cream, Bulk 20 Pack, 2 Individually Wrapped Chocolate Bars Per Pack, 30 oz",
     images: ["kinder_1.png", "kinder_2.png"],
@@ -126,7 +126,7 @@ export const PRODUCTS: Product[] = [
     name: "SKITTLES",
     price: 29.5,
     desc: "SKITTLES & STARBURST Assorted Candy Variety Pack for Holidays, Candy Assortment, Party Favors, 62.79 oz (30 Count) Bulk Box",
-    images: ["skittles_1.png", "skittles_1.png"],
+    images: ["skittles_1.png", "skittles_2.png"],
     flavor: "mixed",
   },
 ].map((item) => ({

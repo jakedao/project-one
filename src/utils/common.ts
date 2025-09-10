@@ -36,6 +36,14 @@ export const upperCase = (text: string) => {
   return text.charAt(0).toUpperCase() + text.slice(1, text.length);
 };
 
+export const generatePageName = (text: string) => {
+  const splittedPage = text.split("-");
+  if (splittedPage.length > 1) {
+    return splittedPage.join(" ");
+  }
+  return text;
+};
+
 // Pipeline to transform
 export const sanitizedSearchParams = (
   current: URLSearchParams,

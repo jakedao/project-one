@@ -38,7 +38,11 @@ const Button = (props: TOwnProps) => {
           disabled ? "--disabled" : undefined
         ) + ` ${props.className || ""} `
       }
-      style={{ width: width || "fit-content", height: height || "auto" }}
+      style={{
+        ...rest.style,
+        width: width || "fit-content",
+        height: height || "auto",
+      }}
       onClick={onClick}
     >
       {typeof children === "string" ? (

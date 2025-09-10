@@ -1,15 +1,25 @@
-import { AppLayout } from "@/components";
-import {
-  DemoPage,
-  LandingPage,
-  ListingPage,
-  LoginPage,
-  NotFoundPage,
-  OrderSummaryPage,
-  ProductDetailsPage,
-} from "@/pages";
-import NotAllowPage from "@/pages/NotAllowPage/NotAllowPage";
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
+
+import { AppLayout } from "@/components";
+
+import NotAllowPage from "@/pages/NotAllowPage/NotAllowPage";
+
+const PaymentSuccessPage = lazy(
+  () => import("@/pages/PaymentSuccessPage/PaymentSuccessPage")
+);
+
+const LoginPage = lazy(() => import("@/pages/LoginPage/LoginPage"));
+const LandingPage = lazy(() => import("@/pages/LandingPage/LandingPage"));
+const ListingPage = lazy(() => import("@/pages/ListingPage/ListingPage"));
+const ProductDetailsPage = lazy(
+  () => import("@/pages/ProducDetailPage/ProducDetailPage")
+);
+const OrderSummaryPage = lazy(
+  () => import("@/pages/OrderSummaryPage/OrderSummaryPage")
+);
+const DemoPage = lazy(() => import("@/pages/DemoPage/DemoPage"));
+const NotFoundPage = lazy(() => import("@/pages/NotFoundPage/NotFoundPage"));
 
 export enum ERoute {
   LOGIN = "login",
@@ -18,6 +28,7 @@ export enum ERoute {
   CHECKOUT = "checkout",
   DEMO = "demo",
   NOT_ALLOW = "not-allow",
+  SUCCESS = "payment-success",
 }
 
 export const NAVIGATIONS = [
@@ -49,6 +60,8 @@ const router = createBrowserRouter([
       { path: `/${ERoute.LISTING}`, Component: ListingPage },
       { path: `/${ERoute.LISTING}/:id`, Component: ProductDetailsPage },
       { path: `/${ERoute.CHECKOUT}`, Component: OrderSummaryPage },
+      { path: `/${ERoute.DEMO}`, Component: DemoPage },
+      { path: `/${ERoute.SUCCESS}`, Component: PaymentSuccessPage },
       { path: `/${ERoute.DEMO}`, Component: DemoPage },
       { path: "*", Component: NotFoundPage },
     ],

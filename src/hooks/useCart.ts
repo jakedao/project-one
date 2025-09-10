@@ -117,7 +117,16 @@ const useCart = create<Cart>()(
 
           set({ items: remainedItems });
         },
-        proceedOrder: () => set({ completed: true }),
+        proceedOrder: () => {
+          const { getAcessInfo } = useLocalStorage();
+          const currentUserId = getAcessInfo()?.name || ""; // User must be logged to use this hook
+
+          const remainedCartItems = get().items.filter(
+            (i) => i.userId !== currentUserId
+          );
+
+          set({ items: remainedCartItems, completed: true });
+        },
         getItemByUser: () => {
           const { getAcessInfo } = useLocalStorage();
           const currentUserId = getAcessInfo()?.name || ""; // User must be logged to use this hook
