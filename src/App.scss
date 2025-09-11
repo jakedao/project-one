@@ -16,6 +16,7 @@ html {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  justify-content: start;
   height: 100%;
 }
 
@@ -29,6 +30,7 @@ body {
 .main__body {
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: start;
   margin: auto;
   padding: $padding-base * 6;
@@ -44,7 +46,6 @@ body {
     padding: $padding-base * 10;
     height: calc(100vh - $header-height);
     width: 1512px;
-    height: 100%;
     filter: none;
   }
 }

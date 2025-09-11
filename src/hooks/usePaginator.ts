@@ -13,7 +13,7 @@ const usePaginator = () => {
   ) as unknown as CustomSearchParams;
 
   const page = Number(parsedSearchParms.page) || 1;
-  const limit = Number(parsedSearchParms.limit) || 5;
+  const limit = Number(parsedSearchParms.limit) || 20;
   const flavor = parsedSearchParms.flavor;
   const min = Number(parsedSearchParms.min) || 0;
   const max = Number(parsedSearchParms.max) || 100;

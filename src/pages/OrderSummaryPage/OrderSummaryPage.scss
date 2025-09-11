@@ -7,6 +7,7 @@
   align-items: center;
 
   @include responsive("desktop") {
+    height: 982px;
     justify-content: start;
   }
 
@@ -21,6 +22,7 @@
     @include responsive("desktop") {
       flex-direction: row;
       column-gap: 24px;
+      height: 550px;
       justify-content: center;
     }
   }
