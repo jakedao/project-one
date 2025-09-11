@@ -65,14 +65,17 @@ const RangeSlider = (props: TOwnProps) => {
         <Text>{currencyConverter(ranges.min)}</Text>-
         <Text>{currencyConverter(ranges.max)}</Text>
       </div>
-      {/* <div className="slider-track" style={{ left: ranges.min * 1.7 + "px" }}>
+      {/* <div
+        className="slider-track"
+        style={{ left: ranges.min * (197 / 100) + "px" }}
+      >
         <Text size="text-md" fontWeight={600}>
           {currencyConverter(ranges.min)}
         </Text>
-      </div>
-      <div
+      </div> */}
+      {/* <div
         className="slider-track slider-track--max"
-        style={{ left: ranges.max * 1.6 + "px" }}
+        style={{ left: ranges.max * 1.97 + "px" }}
       >
         <Text size="text-md" fontWeight={600}>
           {currencyConverter(ranges.max)}

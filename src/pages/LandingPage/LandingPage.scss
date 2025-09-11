@@ -50,7 +50,6 @@
 
 .card {
   width: 100%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
@@ -71,12 +70,8 @@
     }
   }
 
-  p {
-    margin: 0;
-    font-size: 20px;
-  }
-
   @include responsive("desktop") {
+    height: 300px;
     padding: 32px;
 
     &__image {
@@ -104,17 +99,17 @@
 
   &__first-row {
     width: 100%;
-
-    @include responsive("desktop") {
-      flex-direction: row;
-      column-gap: 32px;
-      height: 300px;
-    }
   }
 
   @include responsive("desktop") {
     row-gap: 32px;
     height: 832px;
+
+    &__first-row {
+      flex-direction: row;
+      column-gap: 32px;
+      height: 300px;
+    }
   }
 }
 
