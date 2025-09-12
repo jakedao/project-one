@@ -102,7 +102,7 @@ export const PRODUCTS: Product[] = [
     name: "AWAKE",
     price: 9.99,
     desc: "AWAKE - Caffeinated Chocolate Bars - Dark Chocolate, 12 Bars - 100mg Caffeine - 1 Bar Equals 1 Cup of Coffee - Individually Wrapped Energy - Fairtrade, Gluten Free, Non GMO, Kosher - 1.34oz",
-    images: ["awake_1.png", "awake_2.png", "awake_.png"],
+    images: ["awake_1.png", "awake_2.png", "awake_3.png"],
     flavor: "milk",
   },
   {
