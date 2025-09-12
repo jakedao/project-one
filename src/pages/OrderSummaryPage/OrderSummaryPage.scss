@@ -47,7 +47,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-height: 460px;
+  height: 460px;
   overflow-y: auto;
   row-gap: 30px;
   border-radius: 8px;
@@ -85,7 +85,7 @@
     justify-content: start;
     width: 430px;
     height: 330px;
-    padding: 24px;
+    padding: 13.5px 24px;
     background-color: $cold-ash;
     @include castShadow();
   }
@@ -95,20 +95,35 @@
     display: flex;
     flex-direction: row;
     align-items: start;
-    column-gap: 8px;
-    text-align: right !important;
+    justify-content: flex-end;
+    column-gap: 44px;
+    text-align: right !important; // Override Text component's text-align
+
+    & .text {
+      width: fit-content !important; // Override Text component's width
+    }
 
     &:nth-child(3) {
       padding-top: 12px;
       border-top: 2px solid;
+      padding-bottom: 16px;
     }
 
     @include responsive("desktop") {
       height: 60px;
+      padding: 16px 32px;
       justify-content: center;
       align-items: center;
       justify-content: space-evenly;
-      text-align: left !important;
+      text-align: left !important; // Override Text component's text-align
+
+      & .text {
+        width: inherit !important; // Override Text component's width
+      }
+
+      &:nth-child(3) {
+        column-gap: 74px;
+      }
     }
   }
 
