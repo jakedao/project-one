@@ -98,8 +98,8 @@ const ProductDetailsPage = (props: TOwnProps) => {
         <Button
           variant="secondary"
           onClick={handleAddItem}
-          width={170}
-          height={40}
+          width={isMobile ? 170 : 220}
+          height={isMobile ? 40 : 56}
         >
           <div
             style={{
@@ -109,14 +109,20 @@ const ProductDetailsPage = (props: TOwnProps) => {
               alignItems: "center",
             }}
           >
-            <ShoppingCart size={20} />
-            <Text align="center" size="title">
+            <ShoppingCart size={24} />
+            <Text align="center" size="title" fontWeight={600}>
               Add to cart
             </Text>
           </div>
         </Button>
-        <Button onClick={buyNow} width={170} height={40}>
-          Buy now
+        <Button
+          onClick={buyNow}
+          width={isMobile ? 170 : 222}
+          height={isMobile ? 40 : 55}
+        >
+          <Text align="center" size="title" fontWeight={600} color="#aba38f">
+            Buy now
+          </Text>
         </Button>
       </div>
     </div>

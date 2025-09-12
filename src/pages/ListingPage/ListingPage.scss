@@ -40,7 +40,6 @@
     @include responsive("desktop") {
       column-gap: 64px;
       row-gap: 64px;
-      margin-top: 32px;
       margin-top: 0;
       align-items: start;
       justify-content: start;
@@ -53,7 +52,8 @@
     margin-top: 36px;
     @include responsive("desktop") {
       justify-content: end;
-      margin-top: 16px;
+      margin-top: 32px;
+      padding-bottom: 34px;
     }
   }
 }

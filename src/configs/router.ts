@@ -1,25 +1,17 @@
-import { lazy } from "react";
 import { createBrowserRouter } from "react-router";
 
 import { AppLayout } from "@/components";
-
-import NotAllowPage from "@/pages/NotAllowPage/NotAllowPage";
-
-const PaymentSuccessPage = lazy(
-  () => import("@/pages/PaymentSuccessPage/PaymentSuccessPage")
-);
-
-const LoginPage = lazy(() => import("@/pages/LoginPage/LoginPage"));
-const LandingPage = lazy(() => import("@/pages/LandingPage/LandingPage"));
-const ListingPage = lazy(() => import("@/pages/ListingPage/ListingPage"));
-const ProductDetailsPage = lazy(
-  () => import("@/pages/ProducDetailPage/ProducDetailPage")
-);
-const OrderSummaryPage = lazy(
-  () => import("@/pages/OrderSummaryPage/OrderSummaryPage")
-);
-const DemoPage = lazy(() => import("@/pages/DemoPage/DemoPage"));
-const NotFoundPage = lazy(() => import("@/pages/NotFoundPage/NotFoundPage"));
+import {
+  DemoPage,
+  LandingPage,
+  ListingPage,
+  LoginPage,
+  NotAllowPage,
+  NotFoundPage,
+  OrderSummaryPage,
+  PaymentSuccessPage,
+  ProductDetailsPage,
+} from "@/pages";
 
 export enum ERoute {
   LOGIN = "login",

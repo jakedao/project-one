@@ -1,5 +1,6 @@
 // Public Pages
 export { default as LoginPage } from "./LoginPage/LoginPage";
+export { default as NotAllowPage } from "./NotAllowPage/NotAllowPage";
 export { default as NotFoundPage } from "./NotFoundPage/NotFoundPage";
 
 // Private Pages

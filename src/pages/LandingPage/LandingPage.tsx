@@ -35,13 +35,13 @@ const LandingPage = () => {
         <p style={{ paddingBottom: "48px", margin: 0, fontSize: "20px" }}>
           <i>
             I am a JavaScript developer with 5 years of experience specializing
-            in both front-end and back-end development. I have a strong
-            background in building scalable web applications using modern
-            frameworks like React, Node.js, and Express. My expertise includes
-            designing responsive user interfaces, integrating RESTful APIs, and
-            optimizing performance across platforms. I’m passionate about clean
-            code, agile development, and delivering high-quality user
-            experiences
+            in both front-end and back-end development.
+            <br />I have a strong background in building scalable web
+            applications using modern frameworks like React, Node.js, and
+            Express. My expertise includes designing responsive user interfaces,
+            integrating RESTful APIs, and optimizing performance across
+            platforms. I’m passionate about clean code, agile development, and
+            delivering high-quality user experiences
           </i>
         </p>
       </div>
@@ -49,7 +49,13 @@ const LandingPage = () => {
       <div className="details">
         <div className={combineClassNames("details", "__first-row")}>
           {/* SECTION FOR SKILLS*/}
-          <div className="card">
+          <div
+            className="card"
+            style={{
+              width: isMobile ? "inherit" : "440px",
+              height: isMobile ? "163px" : "300px",
+            }}
+          >
             <Text variant="h5">Skills</Text>
             <div style={{ marginTop: isMobile ? "15px" : "28px" }}>
               {SKILLS.map((skill, index) => (
@@ -61,7 +67,13 @@ const LandingPage = () => {
           </div>
 
           {/* SECTION FOR HOBBIES*/}
-          <div className="card">
+          <div
+            className="card"
+            style={{
+              width: isMobile ? "inherit" : "468px",
+              height: isMobile ? "234px" : "300px",
+            }}
+          >
             <Text variant="h5">Hobbies</Text>
             <div style={{ marginTop: isMobile ? "16px" : "28px" }}>
               {HOBBIES.map((hob, index) => (
